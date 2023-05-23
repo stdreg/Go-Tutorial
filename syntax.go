@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+	fmt.Println("Basic Syntax")
 	var number int //decalaration must be typed, value is 0
 	fmt.Println("number:", number)
 	var number2 = 2 //assigned - no need to write down type
@@ -41,4 +42,9 @@ func main() {
 	fmt.Println("monday", monday)
 	fmt.Println("tuesday", tuesday)
 	fmt.Println("thursday", thursday)
+
+	pointerSyntax() //pointer.go also in package main
+
+	var meter Meter = 2
+	fmt.Println(meter, "in cm", MeterToCm(meter))
 }
