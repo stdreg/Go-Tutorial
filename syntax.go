@@ -23,11 +23,11 @@ func main() {
 
 	var ( // variables can be grouped
 		home   = os.Getenv("HOME")
-		user   = os.Getenv("USER")
+		usr    = os.Getenv("USER")
 		gopath = os.Getenv("GOPATH")
 	)
 	fmt.Println("Home:" + home)
-	fmt.Println("User:" + user)
+	fmt.Println("User:" + usr)
 	fmt.Println("GoPath:" + gopath)
 	test := "Halloa"      //short notation
 	const test2 = "World" //constants are untyped by default
@@ -45,6 +45,29 @@ func main() {
 
 	pointerSyntax() //pointer.go also in package main
 
+	fmt.Println("\nStruct Syntax")
 	var meter Meter = 2
 	fmt.Println(meter, "in cm", MeterToCm(meter))
+
+	myadress := adress{
+		street: "Mainstreet",
+		city:   "Metropol",
+	}
+	fmt.Println(myadress)
+	secondadress := adress{"Elmstreet", "NewYork"}
+	fmt.Println(secondadress)
+	admin := user{
+		name: "Admin",
+		adress: adress{
+			street: "Street1",
+			city:   "City1",
+		},
+	}
+	fmt.Println(admin)
+	thirdadress := PublicAdress{
+		Street: "Street2",
+		City:   "London",
+	}
+	fmt.Println(thirdadress)
+
 }
