@@ -70,4 +70,28 @@ func main() {
 	}
 	fmt.Println(thirdadress)
 
+	fmt.Println("\nFunction Syntax")
+	fmt.Println(greet("World"))
+	fmt.Println("Result from 1 + 4 + 9: ", add(1, 4, 9))
+	var x, y = swap(1, 11)
+	fmt.Println("Swap 1, 11: ", x, y)
+	var xx, yy = swap2(2, 22)
+	fmt.Println("Swap2 2, 22: ", xx, yy)
+	fmt.Println("Variadic-Add: ", variadicAdd(1, 2, 3, 4, 5, 6, 7, 8, 9, 22))
+
+	//using function myfilter as type
+	filterfunc := func(s string) bool {
+		return len(s) == 3
+	}
+	var input = []string{"yes", "no", "but", "never"}
+	fmt.Println("Anonymous Function as filter: ", myfilter(input, filterfunc))
+
+	fmt.Println("The same with closures (2 and 3):")
+	filterfunc2 := filterFuncLen(2)
+	filterfunc3 := filterFuncLen(3)
+	fmt.Println("Anonymous Function as filter: ", myfilter(input, filterfunc2))
+	fmt.Println("Anonymous Function as filter: ", myfilter(input, filterfunc3))
+
+	defertest()
+
 }

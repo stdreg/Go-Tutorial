@@ -23,5 +23,5 @@ type user struct {
 // Additional Tags
 type PublicAdress struct {
 	Street string `json:"street"`
-	City   string `json:"city`
+	City   string `json:"city"`
 }
